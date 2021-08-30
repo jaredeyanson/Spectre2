@@ -1,0 +1,64 @@
+#characters {
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-left:4px solid black;
+    
+}
+
+#charDiv {
+    background-color: black, .1;
+    padding-top: 5px;
+    width: 50%;
+    margin-left: 25%;    
+}
+
+body {
+    background-image: url("flir_image.jpeg");
+    background-color: #cccccc;
+    text-align: center;
+    height: 900px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed;
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.charButton {
+    width: 40%;
+}
+
+#titleDiv {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    
+    margin-bottom: 0%;
+    border-right: 4px solid black;
+    border-left:4px solid black;
+}
+
+#statTitle {
+    width: 18%;
+    flex: auto;
+    border: solid;
+    border-color: 1px solid black;
+}
+
+#statDiv {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    
+    margin-top: 0%;
+    border-right: 4px solid black;
+    border-left:4px solid black;
+}
+
+#statValue {
+    width: 18%;
+    flex: auto;
+    border: 1px solid black;
+}

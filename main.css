@@ -18,6 +18,32 @@ body {
 #rightDiv {
     float: right;
     width: 49%;
-    border: 2px solid black
+    border: 2px solid black;
+    position: sticky;
+    
 }
 
+/* #charSelectDiv {
+    display: flex;
+    flex-direction: column;
+} */
+
+.statDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#statTitle {
+    flex: 0 0 19%; 
+    border: 2px dotted black;
+    padding: 0;
+    margin: 0
+}
+
+#statValue {
+    flex: 0 0 19%; 
+    border: 2px dotted black;
+    margin: 0;
+    margin-bottom: 20px;
+}

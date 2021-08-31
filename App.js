@@ -98,7 +98,13 @@ function forceDetail(e) {
     newDiv.className = 'characters'
     statDiv.className = "statDiv"
     
-
+    for (let h = 0; h < characterInfo[i].stats.length; h++) {
+      let stat = document.createElement('p')
+      stat.innerHTML = characterInfo[i].stats[h].statAbbr
+      stat.id = 'statTitle'
+      statDiv.appendChild(stat)
+    }
+    
     for (let h = 0; h < characterInfo[i].stats.length; h++) {
       let stat = document.createElement('p')
       stat.id = "statValue"
@@ -106,12 +112,7 @@ function forceDetail(e) {
       statDiv.appendChild(stat)
     }
 
-    for (let h = 0; h < characterInfo[i].stats.length; h++) {
-      let stat = document.createElement('p')
-      stat.innerHTML = characterInfo[i].stats[h].statAbbr
-      stat.id = 'statTitle'
-      statDiv.appendChild(stat)
-    }
+   
 
     charSelectDiv.appendChild(button)
     charSelectDiv.appendChild(level)

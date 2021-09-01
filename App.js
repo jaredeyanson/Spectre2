@@ -1,3 +1,4 @@
+// Add basic page elements for the layout
 let leftDiv = document.createElement('div')
 leftDiv.id = 'leftDiv'
 let rightDiv = document.createElement('div')
@@ -20,8 +21,11 @@ rightDiv.appendChild(armyDiv)
 document.body.appendChild(leftDiv)
 document.body.appendChild(rightDiv)
 
+//Set points counter value to 0
 let totalPoints = 0
 
+
+//add character to army list
 function addModel(e) {
   let character
 
@@ -35,29 +39,17 @@ function addModel(e) {
   }
   console.log(character)
 
-  //points = points + character.points
-  // document.getElementById('points').style.display = 'none'
-  // document.getElementById('points').style.display = 'default'
-  
   totalPoints = totalPoints + character.points
 
   let armyPoints = document.createElement('h1')
   armyPoints.id = 'armyPoints'
-  // armyPoints.innerHTML = totalPoints
+
   let modelDiv = document.createElement('div')
-  let modelname = document.createElement('h3')
-  // function totalPoint(){
-  //   document.getElementById('armyPoints').style.display = 'hidden'
-  //   document.getElementById('armyPoints').style.display = 'default'
-    
-  //   return totalPoints
-  // }
-  //armyPoints.innerHTML = totalPoints
-  
+  let modelname = document.createElement('h2')
+
   modelDiv.className = 'modelDiv'
   modelname.className = 'charName'
-  
-  //armyPoints.parentNode.replaceChild(armyPoints, armyPoints);
+
   modelname.innerHTML = character.modelName
 
   totalPntsDiv.appendChild(armyPoints)
@@ -68,6 +60,7 @@ function addModel(e) {
 
 }
 
+//present character options to user
 function forceDetail(e) {
   let characterInfo
   let tier
@@ -85,8 +78,8 @@ function forceDetail(e) {
   for (let i = 0; i < characterInfo.length; i++) {
     let newDiv = document.createElement("div")
     let button = document.createElement("button")
-    let points = document.createElement("p")
-    let level = document.createElement("p")
+    let points = document.createElement("h2")
+    let level = document.createElement("h2")
     let statDiv = document.createElement("div")
     document.getElementById(tier).disabled = true
 
@@ -97,22 +90,22 @@ function forceDetail(e) {
     level.innerHTML = "Level: " + characterInfo[i].level
     newDiv.className = 'characters'
     statDiv.className = "statDiv"
-    
+
     for (let h = 0; h < characterInfo[i].stats.length; h++) {
-      let stat = document.createElement('p')
+      let stat = document.createElement('h2')
       stat.innerHTML = characterInfo[i].stats[h].statAbbr
       stat.id = 'statTitle'
       statDiv.appendChild(stat)
     }
-    
+
     for (let h = 0; h < characterInfo[i].stats.length; h++) {
-      let stat = document.createElement('p')
+      let stat = document.createElement('h2')
       stat.id = "statValue"
       stat.innerHTML = characterInfo[i].stats[h].statValue
       statDiv.appendChild(stat)
     }
 
-   
+
 
     charSelectDiv.appendChild(button)
     charSelectDiv.appendChild(level)
@@ -124,12 +117,12 @@ function forceDetail(e) {
   }
 }
 
-//add function to add model to army list... this is goin to take a minute
-
+//get tier names 
 let tierList = data[0].tier.map((e) => {
   return e.name
 })
 
+//add tier selection buttons
 for (let i = 0; i < tierList.length; i++) {
   let button = document.createElement("button")
   button.innerHTML = tierList[i]
